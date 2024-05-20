@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.box {
+  padding: 30px;
+  background: royalblue;
+  color: white;
+  width: 300px;
+  float: left;
+  min-height: 250px;
+  margin: 20px;
+  border-radius: 20px;
+  animation: 2s boxAni;
+}
+
+@keyframes boxAni {
+  from {
+    margin-left: -100%;
+  }
+}
+
+#html {
+  background: linear-gradient(darkorange,orange);
+}
+#css {
+  background: linear-gradient(blue,royalblue);
+}
+#js {
+  background: linear-gradient(lightyellow,yellow);
+  color: black;
+}
+
+.box h2 {
+  text-align: center;
+}
+
+#pageTitle {
+  text-align: center;
+  font: 100px consolas;
+  font-weight: 900;
+  animation: 3s titleAni;
+}
+@keyframes titleAni {
+  from {
+    transform: translateY(-300%);
+    background: lightgray;
+    color: gray;
+  }
+}
