@@ -60,7 +60,7 @@ for (const i in range(1000)) { testArr.push(Math.floor(Math.random() * 100)); }
 Object.prototype.json = function(tab=2) { if(typeof tab === 'number') return JSON.stringify(this,null,tab); }
 String.prototype.parse = function() { return JSON.parse(this); }
 
-const getFetch = async(url)=>await fetch(url).then(resp=>resp.json());
+const get = async(url)=>await fetch(url).then(resp=>resp.json());
 
 const findSames = (...arr)=>arr.reduce((pre,cur)=>{!pre[cur]?pre[cur]=1:++pre[cur];return pre},{});
 const toArr = (x)=>Array.from(x);
