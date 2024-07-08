@@ -67,3 +67,4 @@ const toArr = (x)=>Array.from(x);
 String.prototype.encode = function(){ return encodeURI(this); }
 String.prototype.decode = function(){ return decodeURI(this); }
 Array.prototype.howMany = function(val){return this.reduce((pre,cur)=>cur===val?++pre:pre,0)}
+Array.prototype.findPercent = function(txt){return this.howMany(txt)/this.length*100;}
