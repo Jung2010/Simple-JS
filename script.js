@@ -68,3 +68,10 @@ String.prototype.encode = function(){ return encodeURI(this); }
 String.prototype.decode = function(){ return decodeURI(this); }
 Array.prototype.howMany = function(val){return this.reduce((pre,cur)=>cur===val?++pre:pre,0)}
 Array.prototype.findPercent = function(txt){return this.howMany(txt)/this.length*100;}
+
+const cLog = (...v)=>console.log(...v);
+const cDir = (...v)=>console.dir(...v);
+const cTable = (...v)=>console.table(...v);
+const cError = (...v)=>console.error(...v);
+const cTime = (...v)=>console.time();
+const cTimeEnd = (...v)=>console.timeEnd();
