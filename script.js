@@ -41,6 +41,7 @@ HTMLElement.prototype.html = function(html) { return html?this.innerHTML=html:th
 HTMLElement.prototype.texts = function() { return this.innerText; }
 HTMLElement.prototype.add = function(html) { return html?this.innerHTML+=html:undefined; }
 HTMLElement.prototype.eachAdd = function(arr=[],callback=()=>{}) { return arr.forEach((...args)=>this.innerHTML+=callback(...args)); }
+HTMLElement.addE = function(type,func) {this.addEventListener('click',func);}
 
 NodeList.prototype.css = function(type,value) {
   if(typeof type==='string'&&typeof value==='string'){ this.forEach(v=>v.style[type]=value) }
@@ -75,3 +76,6 @@ const cTable = (...v)=>console.table(...v);
 const cError = (...v)=>console.error(...v);
 const cTime = (...v)=>console.time();
 const cTimeEnd = (...v)=>console.timeEnd();
+
+const r_timer = (f,t)=>setInterval(f,t);
+const timer = (f,t)=>setTimeout(f,t);
