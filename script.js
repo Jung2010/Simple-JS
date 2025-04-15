@@ -97,6 +97,18 @@ HTMLElement.addE = function (type, func) {
   this.addEventListener(type, func);
 }
 
+const findText = function (txt) {
+  // 특정 텍스트가 포함된 모든 요소 찾기
+  if(typeof txt !== 'string') throw new TypeError("The type of argument must be String.");
+  const allEle = document.querySelectorAll("*");
+  const selects = Array.from(allEle).reduce((pre,cur)=>{
+    let ifYes = (cur.innerText).includes(txt);
+    if(cur.tagName==="SCRIPT") ifYes = false; // script태그는 제외.
+    return ifYes?[...pre,cur]:pre;
+  },[]);
+  return selects;
+}
+
 NodeList.prototype.css = function (type, value) {
   // NodeList의 각 요소에 대해 스타일을 설정
   if (typeof type === 'string' && typeof value === 'string') {
